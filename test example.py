@@ -53,6 +53,27 @@ for i, li in enumerate(html.select('li')):
 
 # Try with SPH
 raw_html = simple_get('https://sph.umd.edu/content/admissions')
-html = BeautifulSoup(raw_html, 'html.parser')
+soup = BeautifulSoup(raw_html, 'html.parser')
+print(soup.prettify())
+list(soup.children)
+[type(item) for item in list(soup.children)]
+html = list(soup.children)[2]
+body = list(html.children)[3]
+
+
+soup.find_all('p')  # This is the key 
+
+
+
 for i, li in enumerate(html.select('li')):
         print(i, li.text)
+
+
+
+
+
+
+
+
+
+
